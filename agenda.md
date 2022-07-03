@@ -21,3 +21,10 @@ Sunday 03/Jul/2022
 (1) Implement Routes with react-router-dom
 (2) Authenticating Users with JWT
 (3) Create RegistrationForm component
+
+
+Sunday 03/07/2022
+(1) Install Material UI libraries
+(2) Create UI for UsersListingScreen
+(3) Install react-router-dom
+(4) Configure App.js for routing
