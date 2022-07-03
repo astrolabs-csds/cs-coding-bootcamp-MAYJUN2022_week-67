@@ -10,14 +10,25 @@ import MCard from './MCard.js';
 function UsersListingScreen() {
 
     let [loadingState, setLoadingState] = useState(true);
+    let [dataState, setDataState] = useState([]);
 
 
     useEffect(
         function() {
-            setTimeout(
-                function(){ setLoadingState(false) },
-                1000
+
+            fetch('https://jsonplaceholder.typicode.com/albums/1/photos')
+            // convert string to json
+            .then(
+                function(stringResponse) { return stringResponse.json() }
             )
+            // use json data
+            .then(
+                function(jsonResponse) {
+                    setDataState( jsonResponse );
+                    setLoadingState( false );
+                }
+            )
+
         },
         []
     )
@@ -35,30 +46,35 @@ function UsersListingScreen() {
                     {
                         loadingState === true &&
                         <Grid container spacing={2}>
-                            <Grid item md={4} sm={12}>
-                                <Skeleton variant="rectangular" height={450} />
-                            </Grid>
-                            <Grid item md={4} sm={12}>
-                                <Skeleton variant="rectangular" height={450} />
-                            </Grid>
-                            <Grid item md={4} sm={12}>
-                                <Skeleton variant="rectangular" height={450} />
-                            </Grid>
+                            {
+                                [1,2,3,4,5,6,7,8,9,10].map(
+                                    function() {
+                                        return (
+                                            <Grid item md={4} xs={12}>
+                                                <Skeleton variant="rectangular" height={450} />
+                                            </Grid>
+                                        )
+                                    }
+                                )
+                            }
+                            
                         </Grid>
                     }
 
                     {
                         loadingState === false &&
                         <Grid container spacing={2}>
-                            <Grid item md={4} sm={12}>
-                                <MCard imageSrc="./logo192.png"/>
-                            </Grid>
-                            <Grid item md={4} sm={12}>
-                                <MCard imageSrc="./logo192.png"/>
-                            </Grid>
-                            <Grid item md={4} sm={12}>
-                                <MCard imageSrc="./logo192.png"/>
-                            </Grid>
+                            {
+                                dataState.map(
+                                    function(dataObj) {
+                                        return (
+                                        <Grid item md={4} xs={12}>
+                                            <MCard imageSrc={dataObj['thumbnailUrl']}/>
+                                        </Grid>
+                                        )
+                                    }
+                                )
+                            }
                         </Grid>
                     }
 
