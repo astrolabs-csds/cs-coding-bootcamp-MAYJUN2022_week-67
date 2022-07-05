@@ -26,5 +26,10 @@ Sunday 03/Jul/2022
 Sunday 03/07/2022
 (1) Install Material UI libraries
 (2) Create UI for UsersListingScreen
-(3) Install react-router-dom
-(4) Configure App.js for routing
+
+
+Tue 05/07/2022
+(1) Install react-router-dom
+(2) Configure App.js for routing
+(3) RegistrationScreen
+(4) Deploy frontend app (week-67 folder) to Heroku

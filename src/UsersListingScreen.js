@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import MUIHeader from "./MUIHeader";
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -35,7 +34,6 @@ function UsersListingScreen() {
 
     return(
         <React.Fragment>
-            <MUIHeader />
             <Box mt={4}>
                 <Container>
 

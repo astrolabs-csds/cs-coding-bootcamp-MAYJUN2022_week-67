@@ -1,5 +1,8 @@
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import LayoutRoute from './LayoutRoute';
 import UsersListingScreen from "./UsersListingScreen";
+import HomeScreen from './HomeScreen';
 
 const theme = createTheme(
   {
@@ -25,7 +28,12 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <UsersListingScreen/>
+      <BrowserRouter>
+        <Switch>
+          <LayoutRoute path="/" exact={true} component={HomeScreen} />
+          <LayoutRoute path="/users" exact={true} component={UsersListingScreen} />
+        </Switch>
+      </BrowserRouter>
     </ThemeProvider>
   )
 
