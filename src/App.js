@@ -4,6 +4,7 @@ import LayoutRoute from './LayoutRoute';
 import UsersListingScreen from "./UsersListingScreen";
 import HomeScreen from './HomeScreen';
 import LoginScreen from './LoginScreen';
+import RegistrationScreen from './RegistrationScreen';
 
 const theme = createTheme(
   {
@@ -34,6 +35,7 @@ function App() {
           <LayoutRoute path="/" exact={true} component={HomeScreen} />
           <LayoutRoute path="/users" exact={true} component={UsersListingScreen} />
           <LayoutRoute path="/login" exact={true} component={LoginScreen} />
+          <LayoutRoute path="/register" exact={true} component={RegistrationScreen} />
         </Switch>
       </BrowserRouter>
     </ThemeProvider>
