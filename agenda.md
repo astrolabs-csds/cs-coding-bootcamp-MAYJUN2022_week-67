@@ -31,5 +31,8 @@ Sunday 03/07/2022
 Tue 05/07/2022
 (1) Install react-router-dom
 (2) Configure App.js for routing
-(3) RegistrationScreen
-(4) Deploy frontend app (week-67 folder) to Heroku
+
+
+Thu 07/07/2022
+(3) Deploy frontend app (week-67 folder) to Heroku
+(4) RegistrationScreen
